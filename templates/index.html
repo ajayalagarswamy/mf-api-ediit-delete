@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          table,
+        th,
+        td {
+            width: 50%;
+            border: 2px solid black;
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        <label for="Name">Name</label>
+        <input type="text" name="Name"><br>
+
+        <label for="fund_code">fund_code</label>
+        <input type="number" name="fund_code"><br>
+
+        <label for="investment">investment</label>
+        <input type="number" name="investment"><br>
+
+        <label for="unit_held">unit_held</label>
+        <input type="number" name="unit_held"><br>
+
+        <input type="submit" value="submit">
+
+    </form>
+    <table>
+        <tr>
+            <th>si.no</th>
+            <th>Name</th>
+            <th>fund_house1</th>
+            <th>investment</th>
+            <th>unit_held</th>
+            <th>nav</th>
+            <th>current_value</th>
+            <th>growth</th>
+            <th colspan="2">Actions</th>
+        </tr>
+        {%for i in mf%}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{i.Name}}</td>
+            <td>{{i.fund_house1}}</td>
+            <td>{{i.investment}}</td>
+            <td>{{i.unit_held}}</td>
+            <td>{{i.nav}}</td>
+            <td>{{i.current_value}}</td>
+            <td>{{i.growth}}</td>
+            <td><a href="">edit</a></td>
+            <td><a href="">delete</a></td>
+        </tr>
+        {%endfor%}
+    </table>
+
+</body>
+
+</html>
